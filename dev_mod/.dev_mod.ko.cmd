@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/dev_mod/dev_mod.ko := ld -r  -EL -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds  --build-id  -o /home/pi/Desktop/modules_test/dev_mod/dev_mod.ko /home/pi/Desktop/modules_test/dev_mod/dev_mod.o /home/pi/Desktop/modules_test/dev_mod/dev_mod.mod.o ;  true

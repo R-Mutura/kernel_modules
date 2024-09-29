@@ -1,0 +1,115 @@
+Driver Registration/Unregistration: i2c_add_driver(), i2c_del_driver()
+Reading/Writing Registers (SMBus): i2c_smbus_read_byte_data(), i2c_smbus_write_byte_data()
+Generalized I2C Communication: i2c_transfer()
+Word Data Read/Write: i2c_smbus_read_word_data(), i2c_smbus_write_word_data()
+Block Data Read/Write: i2c_smbus_read_i2c_block_data(), i2c_smbus_write_i2c_block_data()
+
+explanation 
+i2c_add_driver()
+Usage: Registers an I2C driver with the I2C subsystem.
+Prototype: int i2c_add_driver(struct i2c_driver *driver);
+Parameters:
+driver: Pointer to the i2c_driver structure.
+Purpose: This function is called in the driver's initialization code to register the driver with the I2C core.
+Example:
+c
+Copy code
+i2c_add_driver(&bmp_driver);
+2. i2c_del_driver()
+Usage: Unregisters the I2C driver from the I2C subsystem.
+Prototype: void i2c_del_driver(struct i2c_driver *driver);
+Parameters:
+driver: Pointer to the i2c_driver structure.
+Purpose: This function is used in the driver's exit code to remove the driver from the I2C core.
+Example:
+c
+Copy code
+i2c_del_driver(&bmp_driver);
+3. i2c_smbus_read_byte_data()
+Usage: Reads a byte from a specific register on the I2C device using SMBus protocol.
+Prototype: int i2c_smbus_read_byte_data(struct i2c_client *client, u8 command);
+Parameters:
+client: Pointer to the i2c_client structure representing the I2C device.
+command: Register address to read from.
+Returns: The byte read from the device, or a negative error code.
+Example:
+c
+Copy code
+int value = i2c_smbus_read_byte_data(client, 0xD0);  // Reading chip ID register
+4. i2c_smbus_write_byte_data()
+Usage: Writes a byte to a specific register on the I2C device using SMBus protocol.
+Prototype: int i2c_smbus_write_byte_data(struct i2c_client *client, u8 command, u8 value);
+Parameters:
+client: Pointer to the i2c_client structure.
+command: Register address to write to.
+value: The byte to be written to the register.
+Returns: 0 on success, or a negative error code.
+Example:
+c
+Copy code
+int ret = i2c_smbus_write_byte_data(client, 0xF4, 0x2E);  // Writing to control register
+5. i2c_transfer()
+Usage: Perform multiple I2C transactions at once (such as reading and writing) in a more generalized way compared to SMBus functions.
+Prototype: int i2c_transfer(struct i2c_adapter *adap, struct i2c_msg *msgs, int num);
+Parameters:
+adap: Pointer to the i2c_adapter structure (I2C bus).
+msgs: Array of i2c_msg structures (representing the I2C messages).
+num: Number of messages in the array.
+Returns: Number of messages successfully processed or a negative error code.
+Example:
+c
+Copy code
+struct i2c_msg msgs[2];
+// Set up msgs array, and then:
+int ret = i2c_transfer(client->adapter, msgs, 2);
+6. i2c_smbus_read_word_data()
+Usage: Reads a 16-bit word from a specific register on the I2C device.
+Prototype: int i2c_smbus_read_word_data(struct i2c_client *client, u8 command);
+Parameters:
+client: Pointer to the i2c_client structure.
+command: Register address to read from.
+Returns: 16-bit word read from the device, or a negative error code.
+Example:
+c
+Copy code
+int value = i2c_smbus_read_word_data(client, 0xF6);  // Reading pressure value
+7. i2c_smbus_write_word_data()
+Usage: Writes a 16-bit word to a specific register on the I2C device.
+Prototype: int i2c_smbus_write_word_data(struct i2c_client *client, u8 command, u16 value);
+Parameters:
+client: Pointer to the i2c_client structure.
+command: Register address to write to.
+value: 16-bit word to be written.
+Returns: 0 on success, or a negative error code.
+Example:
+c
+Copy code
+i2c_smbus_write_word_data(client, 0xF4, 0x1234);  // Writing a word to a register
+8. i2c_smbus_read_i2c_block_data()
+Usage: Reads a block of data from a specific register on the I2C device.
+Prototype: int i2c_smbus_read_i2c_block_data(struct i2c_client *client, u8 command, u8 length, u8 *values);
+Parameters:
+client: Pointer to the i2c_client structure.
+command: Register address to read from.
+length: Number of bytes to read.
+values: Buffer to store the read data.
+Returns: Number of bytes read, or a negative error code.
+Example:
+c
+Copy code
+u8 data[6];
+int ret = i2c_smbus_read_i2c_block_data(client, 0xF7, 6, data);  // Reading 6 bytes of sensor data
+9. i2c_smbus_write_i2c_block_data()
+Usage: Writes a block of data to a specific register on the I2C device.
+Prototype: int i2c_smbus_write_i2c_block_data(struct i2c_client *client, u8 command, u8 length, const u8 *values);
+Parameters:
+client: Pointer to the i2c_client structure.
+command: Register address to write to.
+length: Number of bytes to write.
+values: Buffer containing the data to be written.
+Returns: 0 on success, or a negative error code.
+Example:
+c
+Copy code
+u8 data[3] = {0xAA, 0xBB, 0xCC};
+int ret = i2c_smbus_write_i2c_block_data(client, 0xE0, 3, data);  // Writing a block of 3 bytes

@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/bmp_i2c_drv/bmp_i2c_drv.ko := ld -r  -EL -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds  --build-id  -o /home/pi/Desktop/modules_test/bmp_i2c_drv/bmp_i2c_drv.ko /home/pi/Desktop/modules_test/bmp_i2c_drv/bmp_i2c_drv.o /home/pi/Desktop/modules_test/bmp_i2c_drv/bmp_i2c_drv.mod.o ;  true

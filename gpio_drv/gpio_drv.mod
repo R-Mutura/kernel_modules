@@ -1,0 +1,2 @@
+/home/pi/Desktop/modules_test/gpio_drv/gpio_drv.o
+

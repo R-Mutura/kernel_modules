@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/led_gpio_dynamic/ledGPIO_dynamic.mod := { echo  /home/pi/Desktop/modules_test/led_gpio_dynamic/ledGPIO_dynamic.o;  echo; } > /home/pi/Desktop/modules_test/led_gpio_dynamic/ledGPIO_dynamic.mod

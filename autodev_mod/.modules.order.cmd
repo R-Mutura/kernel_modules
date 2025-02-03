@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/autodev_mod/modules.order := {   echo /home/pi/Desktop/modules_test/autodev_mod/autodev_mod.ko; :; } | awk '!x[$$0]++' - > /home/pi/Desktop/modules_test/autodev_mod/modules.order

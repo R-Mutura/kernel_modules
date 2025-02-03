@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/hello_mod/Module.symvers := sed 's/ko$$/o/' /home/pi/Desktop/modules_test/hello_mod/modules.order | scripts/mod/modpost -m -a   -o /home/pi/Desktop/modules_test/hello_mod/Module.symvers -e -i Module.symvers   -T -

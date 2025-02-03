@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/spi_rfid_drv/spi_rfid_drv.ko := ld -r  -EL  --build-id=sha1  -T scripts/module.lds -o /home/pi/Desktop/modules_test/spi_rfid_drv/spi_rfid_drv.ko /home/pi/Desktop/modules_test/spi_rfid_drv/spi_rfid_drv.o /home/pi/Desktop/modules_test/spi_rfid_drv/spi_rfid_drv.mod.o;  true

@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/spi_rfid_drv/Module.symvers := sed 's/ko$$/o/' /home/pi/Desktop/modules_test/spi_rfid_drv/modules.order | scripts/mod/modpost -m -a   -o /home/pi/Desktop/modules_test/spi_rfid_drv/Module.symvers -e -i Module.symvers   -T -

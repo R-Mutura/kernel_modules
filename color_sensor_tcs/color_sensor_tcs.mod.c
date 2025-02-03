@@ -27,8 +27,9 @@ __used
 __attribute__((section("__versions"))) = {
 	{ 0xad1a7def, "module_layout" },
 	{ 0x38ef651b, "device_destroy" },
+	{ 0x185cbb9f, "i2c_del_driver" },
 	{ 0x6303d84a, "i2c_unregister_device" },
-	{ 0xde2a12ed, "i2c_smbus_read_byte_data" },
+	{ 0x159ac5cb, "i2c_smbus_write_byte_data" },
 	{ 0x16b6d4be, "i2c_put_adapter" },
 	{ 0xfa17fcc0, "i2c_register_driver" },
 	{ 0x71c53a98, "i2c_new_device" },
@@ -41,6 +42,11 @@ __attribute__((section("__versions"))) = {
 	{ 0x6091b333, "unregister_chrdev_region" },
 	{ 0xd15f066d, "__class_create" },
 	{ 0xe3ec2f2b, "alloc_chrdev_region" },
+	{ 0xf4fa543b, "arm_copy_to_user" },
+	{ 0xf9e73082, "scnprintf" },
+	{ 0xf9a482f9, "msleep" },
+	{ 0x2e701dbe, "i2c_smbus_read_i2c_block_data" },
+	{ 0xde2a12ed, "i2c_smbus_read_byte_data" },
 	{ 0xdb7305a1, "__stack_chk_fail" },
 	{ 0x5f754e5a, "memset" },
 	{ 0x28cc25db, "arm_copy_from_user" },
@@ -56,4 +62,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "D5FBC2382FF1211C82B7E68");
+MODULE_INFO(srcversion, "FF4BEBE964A32A28B21A10D");

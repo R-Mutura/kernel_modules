@@ -2,10 +2,18 @@
 #include <linux/fs.h>
 #include <linux/kernel.h>
 #include <linux/uaccess.h>
-#include <linux/device.h>
-#include <linux/cdev.h>
+#include <linux/device.h> //Defines the device model (struct device, struct class) to help manage and organize devices.
+                         //Provides functions to create and register device classes (class_create()) and device nodes (device_create()).
+#include <linux/cdev.h> //Defines the struct cdev structure for character device management. Provides functions to initialize (cdev_init()) and add (cdev_add()) a character device. Common Functions
 #include <linux/gpio.h>
-
+/*
+gpio_request(pin_number, "pin_label"): Request control of a GPIO pin.
+gpio_direction_output(pin_number, value): Set a GPIO as an output pin.
+gpio_direction_input(pin_number): Set a GPIO as an input pin.
+gpio_set_value(pin_number, value): Set the value of an output GPIO pin.
+gpio_get_value(pin_number): Read the value of an input GPIO pin.
+gpio_free(pin_number): Release the GPIO pin when done.
+*/
 
 
 MODULE_LICENSE("GPL");

@@ -714,6 +714,8 @@ deps_/home/pi/Desktop/modules_test/color_sensor_tcs/color_sensor_tcs.o := \
     $(wildcard include/config/slub.h) \
     $(wildcard include/config/slob.h) \
   include/linux/kasan.h \
+  include/linux/delay.h \
+  arch/arm/include/asm/delay.h \
   include/linux/i2c.h \
     $(wildcard include/config/i2c.h) \
     $(wildcard include/config/i2c/slave.h) \

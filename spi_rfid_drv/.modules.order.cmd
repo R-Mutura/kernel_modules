@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/spi_rfid_drv/modules.order := {   echo /home/pi/Desktop/modules_test/spi_rfid_drv/spi_rfid_drv.ko; :; } | awk '!x[$$0]++' - > /home/pi/Desktop/modules_test/spi_rfid_drv/modules.order

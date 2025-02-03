@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/led_gpio_dynamic/modules.order := {   echo /home/pi/Desktop/modules_test/led_gpio_dynamic/ledGPIO_dynamic.ko; :; } | awk '!x[$$0]++' - > /home/pi/Desktop/modules_test/led_gpio_dynamic/modules.order

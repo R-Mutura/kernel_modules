@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/hello_mod/modules.order := {   echo /home/pi/Desktop/modules_test/hello_mod/hello.ko; :; } | awk '!x[$$0]++' - > /home/pi/Desktop/modules_test/hello_mod/modules.order

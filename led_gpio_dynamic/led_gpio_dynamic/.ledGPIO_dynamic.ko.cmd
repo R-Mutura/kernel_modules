@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/led_gpio_dynamic/ledGPIO_dynamic.ko := ld -r  -EL  --build-id=sha1  -T scripts/module.lds -o /home/pi/Desktop/modules_test/led_gpio_dynamic/ledGPIO_dynamic.ko /home/pi/Desktop/modules_test/led_gpio_dynamic/ledGPIO_dynamic.o /home/pi/Desktop/modules_test/led_gpio_dynamic/ledGPIO_dynamic.mod.o;  true

@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/modules_test/led_gpio_dynamic/Module.symvers := sed 's/ko$$/o/' /home/pi/Desktop/modules_test/led_gpio_dynamic/modules.order | scripts/mod/modpost -m -a   -o /home/pi/Desktop/modules_test/led_gpio_dynamic/Module.symvers -e -i Module.symvers   -T -
